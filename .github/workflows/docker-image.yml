@@ -17,4 +17,10 @@ jobs:
     - name: Build the Docker image
       run: docker build -t meharshafaatullah099/next-app:latest .
 
+    - name: Docker login
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_TOKEN }}
+
       
